@@ -8,7 +8,7 @@ class SkautAdmin(admin.ModelAdmin):
     prepopulated_fields = { "slug" : ( "prezdivka", )}
 
 class OddilAdmin(admin.ModelAdmin):
-    list_display = ("jmeno", )
+    list_display = ("jmeno", "seznam_skautu")
 
 class AdresaAdmin(admin.ModelAdmin):
     list_display = ("ulice", "oddil")

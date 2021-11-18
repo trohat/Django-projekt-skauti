@@ -12,6 +12,9 @@ class Oddil(models.Model):
     vlajka = models.BooleanField()
     sidlo = models.OneToOneField(Adresa, on_delete=models.CASCADE, null=True)
 
+    def seznam_skautu(self):
+        return ", ".join(str(skaut) for skaut in Skaut.objects.filter(oddil=self))
+
     def __str__(self):
         return self.jmeno
 
